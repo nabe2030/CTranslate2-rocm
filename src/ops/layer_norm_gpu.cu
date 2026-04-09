@@ -145,6 +145,7 @@ namespace ctranslate2 {
 #ifdef CT2_USE_HIP
 #include <hipcub/hipcub.hpp>
 #include <hipcub/block/block_reduce.hpp>
+#include "cuda/hip_math_compat.h"
 #define cub hipcub
 #else
 #include <cub/block/block_reduce.cuh>

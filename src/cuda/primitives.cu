@@ -323,7 +323,7 @@ namespace ctranslate2 {
     mask += blockIdx.x * num_heads * num_queries;
     for (cuda::index_t i = threadIdx.x; i < num_heads * num_queries; i += blockDim.x)
       mask[i] = (mask_future
-                 ? min(length, int32_t((multi_query ? i / num_heads : i % num_queries) + 1))
+                 ? (length < int32_t((multi_query ? i / num_heads : i % num_queries) + 1) ? length : int32_t((multi_query ? i / num_heads : i % num_queries) + 1))
                  : length);
   }
 

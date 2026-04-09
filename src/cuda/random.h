@@ -1,6 +1,8 @@
 #pragma once
 
 #ifdef CT2_USE_HIP
+#include <hip/hip_runtime.h>
+#include "hip_math_compat.h"
 #include <hiprand/hiprand_kernel.h>
 #define curandStatePhilox4_32_10_t hiprandStatePhilox4_32_10_t
 #define curand_init hiprand_init

@@ -177,7 +177,7 @@ namespace at {
     struct MaxFloat
     {
       __device__ __forceinline__ AccumT operator()(AccumT max, T v) const {
-        return ::max(max, (AccumT)v);
+        return max < (AccumT)v ? (AccumT)v : max;
       }
     };
 

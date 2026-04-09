@@ -620,7 +620,7 @@ if (WITH_HIP)
   add_compile_definitions(__HIP_PLATFORM_AMD__)
   add_compile_definitions(__HIP_PLATFORM_HCC__)
   target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/include ${ROCM_PATH}/include /include)
-  target_link_libraries(${PROJECT_NAME} PRIVATE hiprand roc::hipblas roc::rocprim roc::rocthrust hip::hipcub)
+  target_link_libraries(${PROJECT_NAME} PRIVATE hip::hiprand roc::hipblas roc::rocprim roc::rocthrust hip::hipcub)
 
   if(WITH_CUDNN)
     find_package(miopen)

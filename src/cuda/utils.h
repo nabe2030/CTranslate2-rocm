@@ -4,8 +4,17 @@
 
 #ifdef CT2_USE_HIP
 #include <hip/hip_runtime.h>
+#include "hip_math_compat.h"
 #include <hipblas/hipblas.h>
 #include <thrust/execution_policy.h>
+#include <thrust/iterator/counting_iterator.h>
+#include <thrust/iterator/transform_iterator.h>
+#include <thrust/iterator/permutation_iterator.h>
+#include <thrust/transform.h>
+#include <thrust/copy.h>
+#include <thrust/fill.h>
+#include <thrust/reduce.h>
+#include <thrust/extrema.h>
 #include <hipcub/hipcub.hpp>
 #ifdef CT2_WITH_TENSOR_PARALLEL
   #include <cuda/mpi_stub.h>
